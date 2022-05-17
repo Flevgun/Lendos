@@ -13,7 +13,7 @@ export default {
         btnText: {
             type: String,
             required: true
-        }
+        },
         
     },
     data() {

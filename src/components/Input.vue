@@ -2,6 +2,7 @@
   <div v-if="!textarea">
     <label :for="inputId">{{ labelText }}</label>
     <input
+      :value="value"
       :type="inputType"
       :name="inputName"
       :id="inputId"
@@ -46,6 +47,10 @@ export default {
       type: String,
       required: true,
     },
+    value: {
+      type: String,
+      required: false,
+    }
   },
 };
 </script>

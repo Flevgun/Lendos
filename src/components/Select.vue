@@ -1,9 +1,10 @@
 <template>
-  <select name="selectName" @change="$emit('update:field', $event.target.value)">
+  <select name="selectName" @change="$emit('update:field', $event.target.value);">
+    <option value="default">{{defaultOption}}</option>
     <option
       v-for="option in options"
       :key="option.id"
-      :value="`value-${option.id}`"
+      :value=option.id
     >
       {{ option.name }}
     </option>
@@ -25,7 +26,11 @@ export default {
             type: Array,
             requierd: true
         },
-    }
+        defaultOption: {
+          type: String,
+          required: true
+        },
+    },
 }
 </script>
 

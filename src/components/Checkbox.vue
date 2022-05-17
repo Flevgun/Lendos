@@ -6,7 +6,8 @@
       :name="inputName"
       :id="inputId"
       :value="inputValue"
-      @change="$emits('update:field', !field)"
+      :checked="checked"
+      @change="$emit('update:field', !field)"
     />
   </div>
 </template>
@@ -15,7 +16,7 @@
 export default {
   emits: ["update:field"],
   props: {
-    labefor: {
+    labelfor: {
       type: String,
       required: true,
     },
@@ -31,10 +32,14 @@ export default {
       type: String,
       required: true,
     },
-  field: {
+    field: {
       type: String,
       required: true,
     },
+    checked: {
+      type: Number,
+      required: false
+    }
   },
 };
 </script>
